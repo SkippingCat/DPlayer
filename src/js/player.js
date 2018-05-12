@@ -149,6 +149,13 @@ class DPlayer {
         if (this.video.duration) {
             time = Math.min(time, this.video.duration);
         }
+
+        if (this.danmaku) {
+            this.danmaku.seek();
+        }
+
+        this.bar.set('played', time / this.video.duration, 'width');
+
         if (this.video.currentTime < time) {
             this.notice(`${this.tran('FF')} ${(time - this.video.currentTime).toFixed(0)} ${this.tran('s')}`);
         }
@@ -157,12 +164,6 @@ class DPlayer {
         }
 
         this.video.currentTime = time;
-
-        if (this.danmaku) {
-            this.danmaku.seek();
-        }
-
-        this.bar.set('played', time / this.video.duration, 'width');
     }
 
     /**

@@ -51,44 +51,45 @@ class Danmaku {
 
     /**
     * Asynchronously read danmaku from all API endpoints
-    */
+    // */
     _readAllEndpoints (endpoints, callback) {
-        const results = [];
-        let readCount = 0;
-        const cbk = (i) => (err, data) => {
-            ++readCount;
-            if (err) {
-                if (err.response) {
-                    this.options.error(err.response.msg);
-                }
-                else {
-                    this.options.error('Request was unsuccessful: ' + err.status);
-                }
-                results[i] = [];
-            }
-            else {
-                const typeMap = ['right', 'top', 'bottom'];
-                if (data) {
-                    results[i] = data.map((item) => ({
-                        time: item[0],
-                        type: typeMap[item[1]],
-                        color: item[2],
-                        author: item[3],
-                        text: item[4]
-                    }));
-                }
-                else {
-                    results[i] = [];
-                }
-            }
-            if (readCount === endpoints.length) {
-                return callback(results);
-            }
-        };
-
-        for (let i = 0; i < endpoints.length; ++i) {
-            this.options.apiBackend.read(endpoints[i], cbk(i));
-        }
+        // const results = [];
+        // let readCount = 0;
+        // const cbk = (i) => (err, data) => {
+        //     ++readCount;
+        //     if (err) {
+        //         if (err.response) {
+        //             this.options.error(err.response.msg);
+        //         }
+        //         else {
+        //             this.options.error('Request was unsuccessful: ' + err.status);
+        //         }
+        //         results[i] = [];
+        //     }
+        //     else {
+        //         const typeMap = ['right', 'top', 'bottom'];
+        //         if (data) {
+        //             results[i] = data.map((item) => ({
+        //                 time: item[0],
+        //                 type: typeMap[item[1]],
+        //                 color: item[2],
+        //                 author: item[3],
+        //                 text: item[4]
+        //             }));
+        //         }
+        //         else {
+        //             results[i] = [];
+        //         }
+        //     }
+        //     if (readCount === endpoints.length) {
+        //         return callback(results);
+        //     }
+        // };
+        //
+        // for (let i = 0; i < endpoints.length; ++i) {
+        //     this.options.apiBackend.read(endpoints[i], cbk(i));
+        // }
+        return callback([]);
     }
 
     send (dan, callback) {

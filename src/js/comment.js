@@ -5,9 +5,9 @@ class Comment {
         this.player.template.mask.addEventListener('click', () => {
             this.hide();
         });
-        this.player.template.commentButton.addEventListener('click', () => {
-            this.show();
-        });
+        // this.player.template.commentButton.addEventListener('click', () => {
+        //     this.show();
+        // });
         this.player.template.commentSettingButton.addEventListener('click', () => {
             this.toggleSetting();
         });
@@ -71,22 +71,22 @@ class Comment {
     }
 
     send () {
-        this.player.template.commentInput.blur();
-
-        // text can't be empty
-        if (!this.player.template.commentInput.value.replace(/^\s+|\s+$/g, '')) {
-            this.player.notice(this.player.tran('Please input danmaku content!'));
-            return;
-        }
-
-        this.player.danmaku.send({
-            text: this.player.template.commentInput.value,
-            color: this.player.container.querySelector('.dplayer-comment-setting-color input:checked').value,
-            type: this.player.container.querySelector('.dplayer-comment-setting-type input:checked').value
-        }, () => {
-            this.player.template.commentInput.value = '';
-            this.hide();
-        });
+        // this.player.template.commentInput.blur();
+        //
+        // // text can't be empty
+        // if (!this.player.template.commentInput.value.replace(/^\s+|\s+$/g, '')) {
+        //     this.player.notice(this.player.tran('Please input danmaku content!'));
+        //     return;
+        // }
+        //
+        // this.player.danmaku.send({
+        //     text: this.player.template.commentInput.value,
+        //     color: this.player.container.querySelector('.dplayer-comment-setting-color input:checked').value,
+        //     type: this.player.container.querySelector('.dplayer-comment-setting-type input:checked').value
+        // }, () => {
+        //     this.player.template.commentInput.value = '';
+        //     this.hide();
+        // });
     }
 }
 

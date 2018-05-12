@@ -41,7 +41,7 @@
         visibility: hidden;
         &.dplayer-danmaku-move {
             will-change: visibility;
-            animation: danmaku-center 4s linear;
+            animation: danmaku-center 1s linear;
             animation-play-state: paused;
         }
     }

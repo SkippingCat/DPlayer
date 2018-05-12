@@ -29,7 +29,7 @@ export default (options) => {
         !options.video.type && (options.video.type = 'auto');
     }
     if (typeof options.danmaku === 'object' && options.danmaku) {
-        !options.danmaku.user && (options.danmaku.user = 'DIYgod');
+        !options.danmaku.user && (options.danmaku.user = 'K');
     }
     if (options.subtitle) {
         !options.subtitle.type && (options.subtitle.type = 'webvtt');
@@ -52,10 +52,6 @@ export default (options) => {
             click: (player) => {
                 player.infoPanel.triggle();
             }
-        },
-        {
-            text: 'About author',
-            link: 'https://diygod.me'
         },
         {
             text: `DPlayer v${DPLAYER_VERSION}`,

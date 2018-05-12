@@ -20,10 +20,11 @@
 </div>
 <div class="dplayer-controller-mask"></div>
 <div class="dplayer-controller">
-    <div class="dplayer-icons dplayer-comment-box">
+    <div class="dplayer-icons dplayer-comment-box" style="display: none;">
         <button class="dplayer-icon dplayer-comment-setting-icon" data-balloon="{{ tran('Setting') }}" data-balloon-pos="up">
             <span class="dplayer-icon-content">{{@ icons.pallette }}</span>
         </button>
+
         <div class="dplayer-comment-setting-box">
             <div class="dplayer-comment-setting-color">
                 <div class="dplayer-comment-setting-title">{{ tran('Set danmaku color') }}</div>
@@ -52,6 +53,7 @@
                     <span style="background: #D500F9"></span>
                 </label>
             </div>
+
             <div class="dplayer-comment-setting-type">
                 <div class="dplayer-comment-setting-title">{{ tran('Set danmaku type') }}</div>
                 <label>
@@ -68,15 +70,20 @@
                 </label>
             </div>
         </div>
+
         <input class="dplayer-comment-input" type="text" placeholder="{{ tran('Input danmaku, hit Enter') }}" maxlength="30">
+
         <button class="dplayer-icon dplayer-send-icon" data-balloon="{{ tran('Send') }}" data-balloon-pos="up">
             <span class="dplayer-icon-content">{{@ icons.send }}</span>
         </button>
     </div>
+
+
     <div class="dplayer-icons dplayer-icons-left">
         <button class="dplayer-icon dplayer-play-icon">
             <span class="dplayer-icon-content">{{@ icons.play }}</span>
         </button>
+
         <div class="dplayer-volume">
             <button class="dplayer-icon dplayer-volume-icon">
                 <span class="dplayer-icon-content">{{@ icons.volumeDown }}</span>
@@ -89,14 +96,18 @@
                 </div>
             </div>
         </div>
+
         <span class="dplayer-time">
             <span class="dplayer-ptime">0:00</span> /
             <span class="dplayer-dtime">0:00</span>
         </span>
+
         {{ if options.live }}
         <span class="dplayer-live-badge"><span class="dplayer-live-dot" style="background: {{ options.theme }};"></span>{{ tran('Live') }}</span>
         {{ /if }}
     </div>
+
+
     <div class="dplayer-icons dplayer-icons-right">
         {{ if options.video.quality }}
         <div class="dplayer-quality">
@@ -110,16 +121,19 @@
             </div>
         </div>
         {{ /if }}
+
         {{ if options.screenshot }}
         <div class="dplayer-icon dplayer-camera-icon" data-balloon="{{ tran('Screenshot') }}" data-balloon-pos="up">
             <span class="dplayer-icon-content">{{@ icons.camera }}</span>
         </div>
         {{ /if }}
-        <div class="dplayer-comment">
+
+        <div class="dplayer-comment" style="display: none">
             <button class="dplayer-icon dplayer-comment-icon" data-balloon="{{ tran('Send danmaku') }}" data-balloon-pos="up">
                 <span class="dplayer-icon-content">{{@ icons.comment }}</span>
             </button>
         </div>
+
         {{ if options.subtitle }}
         <div class="dplayer-subtitle-btn">
             <button class="dplayer-icon dplayer-subtitle-icon" data-balloon="{{ tran('Hide subtitle') }}" data-balloon-pos="up">
@@ -127,16 +141,13 @@
             </button>
         </div>
         {{ /if }}
-        <div class="dplayer-setting">
+
+        <div class="dplayer-setting" style="display: none;">
             <button class="dplayer-icon dplayer-setting-icon" data-balloon="{{ tran('Setting') }}" data-balloon-pos="up">
                 <span class="dplayer-icon-content">{{@ icons.setting }}</span>
             </button>
             <div class="dplayer-setting-box">
                 <div class="dplayer-setting-origin-panel">
-                    <div class="dplayer-setting-item dplayer-setting-speed">
-                        <span class="dplayer-label">{{ tran('Speed') }}</span>
-                        <div class="dplayer-toggle">{{@ icons.right }}</div>
-                    </div>
                     <div class="dplayer-setting-item dplayer-setting-loop">
                         <span class="dplayer-label">{{ tran('Loop') }}</span>
                         <div class="dplayer-toggle">
@@ -144,6 +155,7 @@
                             <label for="dplayer-toggle"></label>
                         </div>
                     </div>
+
                     <div class="dplayer-setting-item dplayer-setting-showdan">
                         <span class="dplayer-label">{{ tran('Show danmaku') }}</span>
                         <div class="dplayer-toggle">
@@ -151,6 +163,7 @@
                             <label for="dplayer-toggle-dan"></label>
                         </div>
                     </div>
+
                     <div class="dplayer-setting-item dplayer-setting-danunlimit">
                         <span class="dplayer-label">{{ tran('Unlimited danmaku') }}</span>
                         <div class="dplayer-toggle">
@@ -158,6 +171,7 @@
                             <label for="dplayer-toggle-danunlimit"></label>
                         </div>
                     </div>
+
                     <div class="dplayer-setting-item dplayer-setting-danmaku">
                         <span class="dplayer-label">{{ tran('Opacity for danmaku') }}</span>
                         <div class="dplayer-danmaku-bar-wrap">
@@ -169,28 +183,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="dplayer-setting-speed-panel">
-                    <div class="dplayer-setting-speed-item" data-speed="0.5">
-                        <span class="dplayer-label">0.5</span>
-                    </div>
-                    <div class="dplayer-setting-speed-item" data-speed="0.75">
-                        <span class="dplayer-label">0.75</span>
-                    </div>
-                    <div class="dplayer-setting-speed-item" data-speed="1">
-                        <span class="dplayer-label">{{ tran('Normal') }}</span>
-                    </div>
-                    <div class="dplayer-setting-speed-item" data-speed="1.25">
-                        <span class="dplayer-label">1.25</span>
-                    </div>
-                    <div class="dplayer-setting-speed-item" data-speed="1.5">
-                        <span class="dplayer-label">1.5</span>
-                    </div>
-                    <div class="dplayer-setting-speed-item" data-speed="2">
-                        <span class="dplayer-label">2</span>
-                    </div>
-                </div>
             </div>
         </div>
+
         <div class="dplayer-full">
             <button class="dplayer-icon dplayer-full-in-icon" data-balloon="{{ tran('Web full screen') }}" data-balloon-pos="up">
                 <span class="dplayer-icon-content">{{@ icons.fullWeb }}</span>
@@ -200,6 +195,7 @@
             </button>
         </div>
     </div>
+
     <div class="dplayer-bar-wrap">
         <div class="dplayer-bar-time hidden">00:00</div>
         <div class="dplayer-bar-preview"></div>
@@ -211,6 +207,7 @@
         </div>
     </div>
 </div>
+
 <div class="dplayer-info-panel dplayer-info-panel-hide">
     <div class="dplayer-info-panel-close">[x]</div>
     <div class="dplayer-info-panel-item dplayer-info-panel-item-version">
@@ -237,20 +234,6 @@
         <span class="dplayer-info-panel-item-title">Video duration</span>
         <span class="dplayer-info-panel-item-data"></span>
     </div>
-    {{ if options.danmaku }}
-    <div class="dplayer-info-panel-item dplayer-info-panel-item-danmaku-id">
-        <span class="dplayer-info-panel-item-title">Danamku id</span>
-        <span class="dplayer-info-panel-item-data"></span>
-    </div>
-    <div class="dplayer-info-panel-item dplayer-info-panel-item-danmaku-api">
-        <span class="dplayer-info-panel-item-title">Danamku api</span>
-        <span class="dplayer-info-panel-item-data"></span>
-    </div>
-    <div class="dplayer-info-panel-item dplayer-info-panel-item-danmaku-amount">
-        <span class="dplayer-info-panel-item-title">Danamku amount</span>
-        <span class="dplayer-info-panel-item-data"></span>
-    </div>
-    {{ /if }}
 </div>
 <div class="dplayer-menu">
     {{ each options.contextmenu }}
